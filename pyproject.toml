@@ -15,6 +15,7 @@ django-bootstrap4 = "^23.2"
 pydub = "^0.25.1"
 gtts = "^2.4.0"
 ffprobe = "^0.5"
+ffmpeg = "^1.4"
 
 
 [tool.poetry.group.dev.dependencies]

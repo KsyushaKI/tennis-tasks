@@ -206,6 +206,16 @@ beautifulsoup4 = ">=4.8.0"
 django = ">=3.2"
 
 [[package]]
+name = "ffmpeg"
+version = "1.4"
+description = "ffmpeg python package url [https://github.com/jiashaokun/ffmpeg]"
+optional = false
+python-versions = "*"
+files = [
+    {file = "ffmpeg-1.4.tar.gz", hash = "sha256:6931692c890ff21d39938433c2189747815dca0c60ddc7f9bb97f199dba0b5b9"},
+]
+
+[[package]]
 name = "ffprobe"
 version = "0.5"
 description = "Wrapper around ffprobe command to extract metadata from media files"
@@ -440,4 +450,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10"
-content-hash = "744388740e9b3cc42c330b540f207dcb48c3c939df012f731eb5082d0469d36d"
+content-hash = "322d5668ec47d50cbafbeca953d306d263ff837c2cbc6fd9fe52e8b929819d24"
