@@ -38,18 +38,18 @@ class IndexView(FormView):
                 for _ in range(colors_count):
                     colors_to_audio += ' ' + random.choice(colors)
                 audio = gTTS(colors_to_audio, lang='ru', slow=False)
-                audio.save(colors_audio_dir + str(num) + "example.mp3")
+                audio.save(colors_audio_dir + str(num) + "example.wav")
             
             sounds = []
             for num in range(count_repeat_colors):
-                sounds.append(AudioSegment.from_mp3(colors_audio_dir + str(num) + "example.mp3"))
+                sounds.append(AudioSegment.from_mp3(colors_audio_dir + str(num) + "example.wav"))
 
             combined_sound = sounds[0] + AudioSegment.silent(pause_time * 1000)
             for sound in sounds[1:]:
                 combined_sound += sound + AudioSegment.silent(pause_time * 1000)
-            combined_sound.export(final_dir + "output.mp3", format="mp3")
+            combined_sound.export(final_dir + "output.wav", format="wav")
 
-            path_to_resul_file = final_dir + "output.mp3"
+            path_to_resul_file = final_dir + "output.wav"
             # os.remove(dir)
 
         return render(request, 'index.html', {'data': data, 'path': path_to_resul_file}) 

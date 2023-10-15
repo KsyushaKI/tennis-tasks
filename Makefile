@@ -9,7 +9,6 @@ start:
 
 install:
 	@poetry install
-	apt-get install ffmpeg libavcodec-extra
 
 lint:
 	@poetry run flake8 tenis_tasks
