@@ -9,7 +9,7 @@ start:
 
 install:
 	@poetry install
-	ffdl install --add-path
+
 
 lint:
 	@poetry run flake8 tenis_tasks

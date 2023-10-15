@@ -14,7 +14,8 @@ python-dotenv = "^1.0.0"
 django-bootstrap4 = "^23.2"
 pydub = "^0.25.1"
 gtts = "^2.4.0"
-ffmpeg-downloader = "^0.2.0"
+ffmpeg = "^1.4"
+ffprobe = "^0.5"
 
 
 [tool.poetry.group.dev.dependencies]
