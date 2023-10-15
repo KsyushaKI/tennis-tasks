@@ -40,14 +40,14 @@ class IndexView(FormView):
                 audio = gTTS(colors_to_audio, lang='ru', slow=False)
                 audio.save(colors_audio_dir + str(num) + "example.mp3")
 
-            sounds = []
-            for num in range(count_repeat_colors):
-                sounds.append(AudioSegment.from_mp3(colors_audio_dir + str(num) + "example.mp3"))
-            combined_sound = sounds[0] + AudioSegment.silent(pause_time * 1000)
+            # sounds = []
+            # for num in range(count_repeat_colors):
+            #     sounds.append(AudioSegment.from_mp3(colors_audio_dir + str(num) + "example.mp3"))
+            # combined_sound = sounds[0] + AudioSegment.silent(pause_time * 1000)
 
-            for sound in sounds[1:]:
-                combined_sound += sound + AudioSegment.silent(pause_time * 1000)
-            combined_sound.export(final_dir + "output.mp3", format="mp3")
+            # for sound in sounds[1:]:
+            #     combined_sound += sound + AudioSegment.silent(pause_time * 1000)
+            # combined_sound.export(final_dir + "output.mp3", format="mp3")
             
             # os.remove(dir)
 
