@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="card">
+  <div class="card-body p-3 bg-light">
+    <h1 class="my-1 display-5">Tennis Tasks</h1>
+      <hr>
+    {% if form %}
+    <form method="post">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <input class="btn btn-danger" type="submit" value="Send">
+    </form>
+    {% endif %}
+
+      </speak>
+    <h1>{{ data }} </h1>
+    <h1>{{ path }}</h1>
+
+ 
+    <audio controls="controls" src="http://0.0.0.0:8000/tennis_tasks/templates/output.mp3" type="audio/mp3"></audio>
+    <audio controls>
+      <source src="{{ path }}" type="audio/mp3">
+      <a href="/tennis-tasks/tennis_tasks/templates/output.mp3">Скачайте музыку</a>
+    </audio>
+    <audio controls>
+      <source src="/tennis_tasks/templates/output.mp3" type="audio/mpeg">
+    </audio>
+    <figure>
+      <figcaption>Listen to the T-Rex:</figcaption>
+      <audio controls src="output.mp3" autoplay type="audio/mp3">
+        <a href="/output.mp3"> Download audio </a>
+      </audio>
+    </figure>
+    <img class="fit-picture" src="file:///Users/oksanakozel/Desktop/tennis-tasks/tennis_tasks/templates/grapefruit-slice-332-332.jpeg" alt="Grapefruit slice atop a pile of other slices" />
+
+<div id="container">
+  <div id="disc"></div>
+  </div>
+<audio id="sound" src="{{ path }}" preload="auto" controls type="audio/mp3"></audio>
+  </div>
+</div>
+{% endblock %}

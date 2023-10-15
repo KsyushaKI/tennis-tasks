@@ -1,0 +1,11 @@
+.venv/
+__pycache__
+dist/
+.pytest_cache/
+.coverage
+coverage.xml
+.DS_Store
+.env
+
+htmlcov/
+*.sqlite3
