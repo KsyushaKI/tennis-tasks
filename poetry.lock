@@ -206,6 +206,16 @@ beautifulsoup4 = ">=4.8.0"
 django = ">=3.2"
 
 [[package]]
+name = "ffprobe"
+version = "0.5"
+description = "Wrapper around ffprobe command to extract metadata from media files"
+optional = false
+python-versions = "*"
+files = [
+    {file = "ffprobe-0.5.zip", hash = "sha256:f7dc048df62c6ccc1c602c865a7f0976b2679200fd07ebdc34ce51e9a8205b76"},
+]
+
+[[package]]
 name = "flake8"
 version = "6.1.0"
 description = "the modular source code checker: pep8 pyflakes and co"
@@ -430,4 +440,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10"
-content-hash = "7de08dd108ab5e4c3dbd8e9390097515048bf8078441d70a063b9ead0f9dc312"
+content-hash = "744388740e9b3cc42c330b540f207dcb48c3c939df012f731eb5082d0469d36d"
