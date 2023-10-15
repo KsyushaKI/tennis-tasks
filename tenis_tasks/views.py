@@ -27,29 +27,28 @@ class IndexView(FormView):
             count_repeat_colors = full_time // pause_time
             colors_audio_dir = f"{os.getcwd()}/tenis_tasks/colors_audio/"
             final_dir = f"{os.getcwd()}/tenis_tasks/final_audio/"
+            path_to_resul_file = final_dir + "output.mp3"
 
             for dir in [colors_audio_dir, final_dir]:
                 if not os.path.exists(dir):
                     os.makedirs(dir)
     
-            
             for num in range(count_repeat_colors):
                 colors_to_audio = ''
                 for _ in range(colors_count):
                     colors_to_audio += ' ' + random.choice(colors)
                 audio = gTTS(colors_to_audio, lang='ru', slow=False)
-                audio.save(colors_audio_dir + str(num) + "example.wav")
-            
+                audio.save(colors_audio_dir + str(num) + "example.mp3")
+
             sounds = []
             for num in range(count_repeat_colors):
-                sounds.append(AudioSegment.from_mp3(colors_audio_dir + str(num) + "example.wav"))
-
+                sounds.append(AudioSegment.from_mp3(colors_audio_dir + str(num) + "example.mp3"))
             combined_sound = sounds[0] + AudioSegment.silent(pause_time * 1000)
+
             for sound in sounds[1:]:
                 combined_sound += sound + AudioSegment.silent(pause_time * 1000)
-            combined_sound.export(final_dir + "output.wav", format="wav")
-
-            path_to_resul_file = final_dir + "output.wav"
+            combined_sound.export(final_dir + "output.mp3", format="mp3")
+            
             # os.remove(dir)
 
         return render(request, 'index.html', {'data': data, 'path': path_to_resul_file}) 
