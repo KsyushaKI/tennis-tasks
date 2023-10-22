@@ -27,7 +27,7 @@ class IndexView(FormView):
 
             count_repeat_colors = full_time // pause_time
             colors_audio_dir = f"{os.getcwd()}/tenis_tasks/colors_audio/"
-            final_dir = f"{os.getcwd()}/tenis_tasks/final_audio/"
+            final_dir = f"{os.getcwd()}/tenis_tasks/media/"
             path_to_resul_file = final_dir + "output.mp3"
 
             for dir in [colors_audio_dir, final_dir]:
@@ -53,4 +53,4 @@ class IndexView(FormView):
             
             # os.remove(dir)
 
-        return render(request, 'index.html', {'data': data, 'path': f'{os.getcwd()}/tenis_tasks/final_audio/output.mp3'}) 
+        return render(request, 'index.html', {'data': data, 'path': f'{os.getcwd()}/tenis_tasks/media/output.mp3'}) 
