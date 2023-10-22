@@ -50,7 +50,7 @@ class IndexView(FormView):
                 combined_sound += sound + AudioSegment.silent(pause_time * 1000)
             combined_sound.export(final_dir + "output.mp3", format="mp3")
             response = FileResponse(open(path_to_resul_file, 'rb'))
-
+            
             # os.remove(dir)
 
-        return render(request, 'index.html', {'data': data, 'path': path_to_resul_file}) 
+        return render(request, 'index.html', {'data': data, 'path': f'{os.getcwd()}/tenis_tasks/final_audio/output.mp3'}) 
