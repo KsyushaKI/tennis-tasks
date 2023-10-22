@@ -17,18 +17,24 @@
     <h1>{{ data }} </h1>
     <h1>{{ path }}</h1>
 
- 
+    /Users/oksanakozel/Desktop/tennis-tasks/tenis_tasks/final_audio/output.mp3
     <audio controls>
       <source src="http://127.0.0.1:53684/tenis_tasks/final_audio/output.mp3">
     </audio>
     <audio controls>
-      <source src="file:///tennis_tasks/tennis_tasks/final_audio/output.mp3">
+      <source src="file:///app/tennis_tasks/tennis_tasks/final_audio/output.mp3">
     </audio>
     <audio controls>
-      <source src="/tennis_tasks/tennis_tasks/final_audio/output.mp3">
+      <source src="/app/tennis_tasks/tennis_tasks/final_audio/output.mp3">
     </audio>
     <audio controls>
-      <source src="tennis_tasks/tennis_tasks/final_audio/output.mp3">
+      <source src="app/tennis_tasks/tennis_tasks/final_audio/output.mp3">
+    </audio>
+    <audio controls>
+      <source src="{{ path }}">
+    </audio>
+    <audio controls>
+      <source src="file:///{{ path }}">
     </audio>
 
     <p><a href="http://127.0.0.1:53684/tenis_tasks/final_audio/output.mp3">Открыть файл в браузере</a>
