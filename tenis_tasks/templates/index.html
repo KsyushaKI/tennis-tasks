@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load bootstrap4 %}
+{% load static %}
 
 {% block content %}
 <div class="card">
@@ -20,6 +21,10 @@
     <audio controls>
       <source src="{{ MEDIA_URL }}output.mp3">
     </audio>
+    <audio controls>
+      <source src="{% static "output.mp3" %}">
+    </audio>
+
   </div>
 </div>
 {% endblock %}
