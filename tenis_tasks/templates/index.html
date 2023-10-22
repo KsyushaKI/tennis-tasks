@@ -18,14 +18,14 @@
     <h1>{{ path }}</h1>
 
  
-    <audio controls="controls" src="file://{{ path }}" type="audio/mp3"></audio>
+    <audio controls src="file:///Users/oksanakozel/Desktop/tennis_tasks/tennis_tasks/templates/output.mp3"></audio>
     <audio controls>
-      <source src="file:///{{ path }}" type="audio/mp3">
-      <a href="file:///{{ path }}">Скачайте музыку</a>
+      <source src="http://127.0.0.1:53684/tenis_tasks/templates/output.mp3">
     </audio>
-    <audio controls="controls" src="{{ path }}" type="audio/mp3"></audio>
+    <audio controls="controls" src="/vv.mp3"></audio>
 
-
+    <p><a href="http://127.0.0.1:53684/tenis_tasks/templates/output.mp3">Открыть файл в браузере</a>
+    <p><a href="http://127.0.0.1:53684/tenis_tasks/templates/output.mp3" download>Скачать файл</a>
   </div>
 </div>
 {% endblock %}

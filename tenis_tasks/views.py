@@ -5,6 +5,7 @@ from pydub import AudioSegment
 from gtts import gTTS
 import random
 import os
+from django.http import FileResponse
 
 
 class IndexView(FormView):
@@ -48,7 +49,8 @@ class IndexView(FormView):
             for sound in sounds[1:]:
                 combined_sound += sound + AudioSegment.silent(pause_time * 1000)
             combined_sound.export(final_dir + "output.mp3", format="mp3")
-            
+            response = FileResponse(open(path_to_resul_file, 'rb'))
+
             # os.remove(dir)
 
         return render(request, 'index.html', {'data': data, 'path': path_to_resul_file}) 
