@@ -16,5 +16,3 @@ class SelectionOfParameters(forms.Form):
     colors_count = forms.IntegerField(required=True)
     pause_time = forms.IntegerField(required=True)
     full_time = forms.IntegerField(required=True)
-
-#  initial='00:00:00'

@@ -5,7 +5,6 @@ from pydub import AudioSegment
 from gtts import gTTS
 import random
 import os
-from django.http import FileResponse
 
 
 class IndexView(FormView):
@@ -17,8 +16,6 @@ class IndexView(FormView):
         form = SelectionOfParameters(request.POST)
         
         if form.is_valid():
-    
-            data = form.cleaned_data
 
             colors = form.cleaned_data.get('colors')
             colors_count = form.cleaned_data.get('colors_count')
@@ -28,7 +25,6 @@ class IndexView(FormView):
             count_repeat_colors = full_time // pause_time
             colors_audio_dir = f"{os.getcwd()}/tenis_tasks/colors_audio/"
             final_dir = f"{os.getcwd()}/tenis_tasks/media/"
-            path_to_resul_file = final_dir + "output.mp3"
 
             for dir in [colors_audio_dir, final_dir]:
                 if not os.path.exists(dir):
@@ -48,9 +44,6 @@ class IndexView(FormView):
 
             for sound in sounds[1:]:
                 combined_sound += sound + AudioSegment.silent(pause_time * 1000)
-            combined_sound.export(final_dir + "output.mp3", format="mp3")
-            response = FileResponse(open(path_to_resul_file, 'rb'))
-            
-            # os.remove(dir)
+            combined_sound.export(final_dir + "output.mp3", format="mp3")            
 
-        return render(request, 'index.html', {'data': data, 'path': f'{os.getcwd()}/tenis_tasks/media/output.mp3'}) 
+        return render(request, 'index.html') 
